@@ -1,0 +1,26 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: model-inference-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: model-inference
+  minReplicas: 1
+  maxReplicas: 8
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    # GPU utilization (requires DCGM exporter)
+    # - type: Pods
+    #   pods:
+    #     metric:
+    #       name: DCGM_FI_DEV_GPU_UTIL
+    #     target:
+    #       type: AverageValue
+    #       averageValue: "70"

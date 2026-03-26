@@ -1,0 +1,30 @@
+# ============================================================
+# Model Configuration
+# Edit this file. Don't hardcode paths in your Python code.
+# ============================================================
+
+model:
+  name: "my-model"
+  version: "0.1.0"
+  # Path to model weights (local path or HuggingFace ID)
+  weights: "./weights/model.pt"
+  # Device: "cuda", "cpu", or "auto"
+  device: "auto"
+  # Max batch size for dynamic batching
+  max_batch_size: 8
+  # Inference timeout in seconds
+  timeout: 30
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  # Enable CORS for frontend demos
+  cors_origins: ["*"]
+  # Max concurrent requests (prevent OOM)
+  max_concurrent: 16
+
+logging:
+  level: "INFO"
+  # Structured JSON logs for production
+  format: "json"

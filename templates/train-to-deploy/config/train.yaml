@@ -1,0 +1,54 @@
+# ============================================================
+# Training Configuration
+# Edit this. Stop hardcoding hyperparameters.
+# ============================================================
+
+model:
+  name: "my-model"
+  # Your model class in src/model.py
+  class: "MyModel"
+  # Pretrained weights to start from (optional)
+  pretrained: null
+
+data:
+  train_path: "./data/train"
+  val_path: "./data/val"
+  # Number of workers for data loading
+  num_workers: 4
+  # Prefetch factor
+  prefetch_factor: 2
+
+training:
+  epochs: 100
+  batch_size: 32
+  # Learning rate
+  lr: 1.0e-4
+  weight_decay: 0.01
+  # LR scheduler: "cosine", "linear", "constant"
+  scheduler: "cosine"
+  warmup_steps: 500
+  # Gradient accumulation (simulate larger batch on small GPUs)
+  gradient_accumulation_steps: 1
+  # Mixed precision: "fp16", "bf16", "no"
+  mixed_precision: "bf16"
+  # Gradient clipping
+  max_grad_norm: 1.0
+
+distributed:
+  # "ddp" or "fsdp"
+  strategy: "ddp"
+  # For FSDP: sharding strategy
+  fsdp_sharding: "full_shard"
+
+checkpointing:
+  save_dir: "./outputs/checkpoints"
+  save_every_n_epochs: 5
+  keep_last_n: 3
+
+logging:
+  # "wandb", "mlflow", or "tensorboard"
+  backend: "wandb"
+  project: "my-project"
+  log_every_n_steps: 50
+
+seed: 42

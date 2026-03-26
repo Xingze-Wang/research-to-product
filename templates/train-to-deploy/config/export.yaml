@@ -1,0 +1,12 @@
+# Model export configuration
+model:
+  class: "MyModel"
+
+checkpoint: "outputs/checkpoints/best.pt"
+output_dir: "outputs/exported"
+
+# Export formats: "onnx", "torchscript", "tensorrt"
+formats:
+  - onnx
+  - torchscript
+  # - tensorrt  # Uncomment if TensorRT is installed
