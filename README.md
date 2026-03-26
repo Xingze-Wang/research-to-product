@@ -35,7 +35,7 @@ Now a customer wants to try it. An investor asks for a live demo. A co-founder c
 **Turn your model into an API in 3 minutes:**
 
 ```bash
-git clone https://github.com/nichole-liu/research-to-product.git
+git clone https://github.com/Xingze-Wang/research-to-product.git
 cp -r templates/paper-to-api my-project
 cd my-project && make serve
 ```
