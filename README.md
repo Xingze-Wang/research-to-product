@@ -10,7 +10,7 @@
 
 <p align="center">
   Production-grade templates for turning research code into real products.<br/>
-  Built by <a href="https://www.miracleplus.com">MiraclePlus (奇绩创坛)</a> — YC's partner in China.
+  Built by <a href="https://www.miracleplus.com">MiraclePlus (奇绩创坛)</a>
 </p>
 
 <p align="center">
